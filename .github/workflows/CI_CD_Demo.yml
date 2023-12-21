@@ -13,7 +13,7 @@ jobs:
     name: Build Job
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Build"
+      - run: echoo "Build"
 
   Test:
     needs: [release, Build]
