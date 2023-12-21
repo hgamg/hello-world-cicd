@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "release"
-  Build:
+  Build
     name: Build Job
     runs-on: ubuntu-latest
     steps:
