@@ -9,12 +9,14 @@ jobs:
     steps:
       - run: echo "release"
   Build:
+    need: release
     name: Build Job
     runs-on: ubuntu-latest
     steps:
-      - run: echoo "Build"
+      - run: echo "Build"
 
   Test:
+    need: [release, Build]
     name: Test Job
     runs-on: ubuntu-latest
     steps:
