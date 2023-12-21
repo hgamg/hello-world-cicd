@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "release"
-  Build
+  Build:
     name: Build Job
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Build"
+      - run: echoo "Build"
 
   Test:
     name: Test Job
