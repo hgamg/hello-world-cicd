@@ -1,0 +1,22 @@
+name: "Demo Pipline"
+
+on: [push]
+
+jobs:
+  release:
+    name: release Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "release"
+  Build:
+    name: Build Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Build"
+
+  Test:
+    name: Test Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Test"
+
