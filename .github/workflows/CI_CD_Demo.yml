@@ -3,20 +3,20 @@ name: "Demo Pipline"
 on: [push]
 
 jobs:
-  release:
-    name: release Job
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "release"
   Build:
-    needs: release
     name: Build Job
     runs-on: ubuntu-latest
     steps:
       - run: echo "Build"
+  Deploy:
+    needs: Build
+    name: Deploy Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploy"
 
   Test:
-    needs: [release, Build]
+    needs: [Build, Deploy]
     name: Test Job
     runs-on: ubuntu-latest
     steps:
