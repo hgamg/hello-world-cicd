@@ -8,17 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Build"
-  Deploy:
-    needs: Build
-    name: Deploy Job
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Deploy"
-
   Test:
-    needs: [Build, Deploy]
+    needs: Build
     name: Test Job
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test"
+  Deploy:
+    needs:  [Build, Test]
+    name: Deploy Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploy"
 
